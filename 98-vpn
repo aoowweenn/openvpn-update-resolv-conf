@@ -1,0 +1,13 @@
+#!/bin/bash
+
+interface=$1
+status=$2
+
+case $status in
+        vpn-up)
+                script_type=up /usr/bin/update-resolv-conf.sh
+                ;;
+        vpn-down)
+                script_type=down /usr/bin/update-resolv-conf.sh
+                ;;
+esac
